@@ -1,10 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets_frontend/assets";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
 function Navbar() {
+  const {setToken,token} = useContext(AppContext)
   const [showMenu, setShowMenu] = useState(false);
-  const [token, setToken] = useState(true);
+  // const [token, setToken] = useState(false);
   const navigate = useNavigate();
   return (
     <div className="flex items-center justify-between text-sm py-4 mb-5 border-b border-gray-400 ">
